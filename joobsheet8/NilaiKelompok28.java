@@ -3,22 +3,28 @@ import java.util.Scanner;
 public class NilaiKelompok28 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int i = 1, j, nilai;
-        float ttlNilai, rtrtNilai;
-        // perulangan 6 kelompok
-        while (i <= 6) {
+        int i, j, nilai;
+        float totalNilai, rataNilai;
+        float rataTertinggi = 0;
+        int kelompokTertinggi = 0;
+        i = 1;
+        while(i <= 6){
             System.out.println("Kelompok " + i);
-            ttlNilai = 0;
-            // perulangan untuk 5 penilai
-            for (j = 1; j <= 5; j++) {
-                System.out.print(" Nilai dari kelompok penilai " + j + ": ");
+            totalNilai = 0;
+            for (j=1; j<=5; j++){
+                System.out.print("  Nilai dari kelompok penilai " + j + " : ");
                 nilai = sc.nextInt();
-                ttlNilai += nilai;
+                totalNilai += nilai;
             }
-            rtrtNilai = ttlNilai / 5;
-            System.out.print("Kelompok " + i + ": nilai rata-rata = " + rtrtNilai);
-            System.out.println(); 
+            rataNilai = totalNilai / 5;
+            System.out.println("Kelompok " + i + ": nilai rata-rata = " + rataNilai);
+            if (rataNilai > rataTertinggi){
+                rataTertinggi = rataNilai;
+                kelompokTertinggi = i;
+            }
             i++;
         }
-    }
+        System.out.println("Kelompok dengan nilai rata-rata tertinggi adalah kelompok " + kelompokTertinggi + " dengan nilai rata-rata " + rataTertinggi);
+    }    
 }
+
