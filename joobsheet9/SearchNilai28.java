@@ -22,6 +22,8 @@ public class SearchNilai28 {
         System.out.println ();
         if (hasil != 0) {
             System.out.println("Nilai " + key + " Ketemu, merupakan nilai mahasiswa ke-" + (hasil + 1) + ".");
+        } else {
+            System.out.println(" Nilai yang dicari tidak ditemukan.");
     }    
 }
 }
